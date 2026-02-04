@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Octopus body -->
+  <circle cx="16" cy="14" r="10" fill="#7c3aed"/>
+  
+  <!-- Eyes -->
+  <circle cx="13" cy="12" r="2" fill="#ffffff"/>
+  <circle cx="19" cy="12" r="2" fill="#ffffff"/>
+  <circle cx="13.5" cy="12" r="1" fill="#1f2937"/>
+  <circle cx="19.5" cy="12" r="1" fill="#1f2937"/>
+  
+  <!-- Smile -->
+  <path d="M 12 16 Q 16 18 20 16" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacles -->
+  <path d="M 8 22 Q 6 26 5 30" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 12 23 Q 10 28 9 31" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 16 24 Q 16 28 16 31" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 20 23 Q 22 28 23 31" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 24 22 Q 26 26 27 30" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Headband -->
+  <ellipse cx="16" cy="8" rx="10.5" ry="2" fill="#f59e0b"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Octopus body -->
+  <circle cx="50" cy="40" r="25" fill="#7c3aed" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <circle cx="42" cy="35" r="4" fill="#ffffff"/>
+  <circle cx="58" cy="35" r="4" fill="#ffffff"/>
+  <circle cx="43" cy="35" r="2" fill="#1f2937"/>
+  <circle cx="59" cy="35" r="2" fill="#1f2937"/>
+  
+  <!-- Smile -->
+  <path d="M 40 45 Q 50 50 60 45" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tentacles with dumbbells -->
+  <!-- Left tentacles -->
+  <path d="M 30 55 Q 20 65 15 75" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="15" cy="75" r="3" fill="#f59e0b"/>
+  <rect x="12" y="77" width="6" height="2" fill="#1f2937"/>
+  
+  <path d="M 35 58 Q 25 70 20 82" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="20" cy="82" r="3" fill="#10b981"/>
+  
+  <!-- Center tentacles -->
+  <path d="M 45 60 Q 40 75 38 88" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="38" cy="88" r="3" fill="#ef4444"/>
+  
+  <path d="M 55 60 Q 60 75 62 88" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="62" cy="88" r="3" fill="#2563eb"/>
+  
+  <!-- Right tentacles -->
+  <path d="M 65 58 Q 75 70 80 82" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="80" cy="82" r="3" fill="#f59e0b"/>
+  
+  <path d="M 70 55 Q 80 65 85 75" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="85" cy="75" r="3" fill="#10b981"/>
+  <rect x="82" y="77" width="6" height="2" fill="#1f2937"/>
+  
+  <!-- Headband -->
+  <ellipse cx="50" cy="25" rx="26" ry="5" fill="#f59e0b" opacity="0.8"/>
+</svg>
