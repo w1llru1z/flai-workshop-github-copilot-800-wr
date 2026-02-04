@@ -3,9 +3,14 @@ from djongo import models
 
 class User(models.Model):
     _id = models.ObjectIdField()
+    username = models.CharField(max_length=150, unique=True)
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)
     name = models.CharField(max_length=200)
     email = models.EmailField(unique=True)
+    bio = models.TextField(blank=True)
     team = models.CharField(max_length=100)
+    date_joined = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

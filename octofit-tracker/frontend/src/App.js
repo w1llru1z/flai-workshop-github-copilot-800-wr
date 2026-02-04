@@ -1,11 +1,47 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import Activities from './components/Activities';
 import Leaderboard from './components/Leaderboard';
 import Teams from './components/Teams';
 import Users from './components/Users';
 import Workouts from './components/Workouts';
+
+function HomePage() {
+  const navigate = useNavigate();
+
+  const cards = [
+    { title: 'Users', path: '/users', icon: '👥', description: 'View all registered users' },
+    { title: 'Activities', path: '/activities', icon: '🏃', description: 'Track fitness activities' },
+    { title: 'Leaderboard', path: '/leaderboard', icon: '🏆', description: 'See top performers' },
+    { title: 'Teams', path: '/teams', icon: '👨‍👩‍👧‍👦', description: 'Browse teams' },
+    { title: 'Workouts', path: '/workouts', icon: '💪', description: 'Get workout suggestions' },
+  ];
+
+  return (
+    <div className="container mt-4">
+      <h1>Welcome to OctoFit Tracker</h1>
+      <p>Track your fitness activities, compete with teams, and get personalized workout suggestions!</p>
+      <div className="row mt-5">
+        {cards.map((card) => (
+          <div key={card.path} className="col-md-4 mb-4">
+            <div 
+              className="card h-100 shadow-sm clickable-card" 
+              onClick={() => navigate(card.path)}
+              style={{ cursor: 'pointer' }}
+            >
+              <div className="card-body text-center">
+                <div style={{ fontSize: '3rem' }}>{card.icon}</div>
+                <h5 className="card-title mt-3">{card.title}</h5>
+                <p className="card-text text-muted">{card.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function App() {
   console.log('App component loaded');
@@ -54,12 +90,7 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={
-            <div className="container mt-4">
-              <h1>Welcome to OctoFit Tracker</h1>
-              <p>Track your fitness activities, compete with teams, and get personalized workout suggestions!</p>
-            </div>
-          } />
+          <Route path="/" element={<HomePage />} />
           <Route path="/users" element={<Users />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/teams" element={<Teams />} />

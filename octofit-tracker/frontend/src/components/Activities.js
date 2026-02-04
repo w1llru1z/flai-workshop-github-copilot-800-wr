@@ -52,7 +52,7 @@ function Activities() {
                   <p className="card-text">
                     <strong>Duration:</strong> {activity.duration} minutes<br />
                     <strong>Calories:</strong> {activity.calories_burned}<br />
-                    <strong>Date:</strong> {new Date(activity.date).toLocaleDateString()}
+                    <strong>Date:</strong> {activity.date ? new Date(activity.date).toLocaleDateString() : 'N/A'}
                   </p>
                 </div>
               </div>

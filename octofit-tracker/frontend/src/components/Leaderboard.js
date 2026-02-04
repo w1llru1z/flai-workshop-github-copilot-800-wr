@@ -45,22 +45,24 @@ function Leaderboard() {
           <tr>
             <th>Rank</th>
             <th>User</th>
-            <th>Points</th>
+            <th>Team</th>
+            <th>Calories</th>
             <th>Activities</th>
           </tr>
         </thead>
         <tbody>
           {leaderboard.length === 0 ? (
             <tr>
-              <td colSpan="4">No leaderboard data found.</td>
+              <td colSpan="5">No leaderboard data found.</td>
             </tr>
           ) : (
             leaderboard.map((entry, index) => (
               <tr key={entry.id || index}>
-                <td>{index + 1}</td>
+                <td>{entry.rank || index + 1}</td>
                 <td>{entry.user_name || entry.username || 'Unknown'}</td>
-                <td>{entry.total_points || entry.points || 0}</td>
-                <td>{entry.activity_count || entry.activities || 0}</td>
+                <td>{entry.team || 'N/A'}</td>
+                <td>{entry.total_calories || 0}</td>
+                <td>{entry.total_activities || 0}</td>
               </tr>
             ))
           )}
@@ -69,5 +71,4 @@ function Leaderboard() {
     </div>
   );
 }
-
 export default Leaderboard;

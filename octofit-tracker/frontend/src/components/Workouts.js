@@ -48,13 +48,24 @@ function Workouts() {
             <div key={workout.id} className="col-md-6 mb-3">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{workout.name}</h5>
+                  <h5 className="card-title">{workout.workout_name}</h5>
                   <p className="card-text">
-                    <strong>Type:</strong> {workout.workout_type}<br />
-                    <strong>Difficulty:</strong> {workout.difficulty_level}<br />
-                    <strong>Duration:</strong> {workout.duration} minutes<br />
+                    <strong>Difficulty:</strong> {workout.difficulty}<br />
                     {workout.description && <><strong>Description:</strong> {workout.description}<br /></>}
-                    {workout.calories_estimate && <><strong>Calories:</strong> {workout.calories_estimate}</>}
+                    {workout.exercises && (
+                      <>
+                        <strong>Exercises:</strong>
+                        <ul>
+                          {Array.isArray(workout.exercises) ? (
+                            workout.exercises.map((exercise, idx) => (
+                              <li key={idx}>{typeof exercise === 'string' ? exercise : exercise.name || JSON.stringify(exercise)}</li>
+                            ))
+                          ) : (
+                            <li>{JSON.stringify(workout.exercises)}</li>
+                          )}
+                        </ul>
+                      </>
+                    )}
                   </p>
                 </div>
               </div>
@@ -65,5 +76,4 @@ function Workouts() {
     </div>
   );
 }
-
 export default Workouts;

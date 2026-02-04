@@ -34,29 +34,33 @@ class Command(BaseCommand):
         
         # Create Marvel users
         marvel_heroes = [
-            {'name': 'Iron Man', 'email': 'tony.stark@avengers.com'},
-            {'name': 'Captain America', 'email': 'steve.rogers@avengers.com'},
-            {'name': 'Thor', 'email': 'thor.odinson@avengers.com'},
-            {'name': 'Hulk', 'email': 'bruce.banner@avengers.com'},
-            {'name': 'Black Widow', 'email': 'natasha.romanoff@avengers.com'},
-            {'name': 'Spider-Man', 'email': 'peter.parker@avengers.com'},
+            {'name': 'Iron Man', 'first_name': 'Tony', 'last_name': 'Stark', 'username': 'ironman', 'email': 'tony.stark@avengers.com', 'bio': 'Genius, billionaire, playboy, philanthropist'},
+            {'name': 'Captain America', 'first_name': 'Steve', 'last_name': 'Rogers', 'username': 'captainamerica', 'email': 'steve.rogers@avengers.com', 'bio': 'First Avenger and Super Soldier'},
+            {'name': 'Thor', 'first_name': 'Thor', 'last_name': 'Odinson', 'username': 'thor', 'email': 'thor.odinson@avengers.com', 'bio': 'God of Thunder from Asgard'},
+            {'name': 'Hulk', 'first_name': 'Bruce', 'last_name': 'Banner', 'username': 'hulk', 'email': 'bruce.banner@avengers.com', 'bio': 'The strongest Avenger'},
+            {'name': 'Black Widow', 'first_name': 'Natasha', 'last_name': 'Romanoff', 'username': 'blackwidow', 'email': 'natasha.romanoff@avengers.com', 'bio': 'Master spy and assassin'},
+            {'name': 'Spider-Man', 'first_name': 'Peter', 'last_name': 'Parker', 'username': 'spiderman', 'email': 'peter.parker@avengers.com', 'bio': 'Your friendly neighborhood Spider-Man'},
         ]
         
         # Create DC users
         dc_heroes = [
-            {'name': 'Superman', 'email': 'clark.kent@justiceleague.com'},
-            {'name': 'Batman', 'email': 'bruce.wayne@justiceleague.com'},
-            {'name': 'Wonder Woman', 'email': 'diana.prince@justiceleague.com'},
-            {'name': 'Flash', 'email': 'barry.allen@justiceleague.com'},
-            {'name': 'Aquaman', 'email': 'arthur.curry@justiceleague.com'},
-            {'name': 'Green Lantern', 'email': 'hal.jordan@justiceleague.com'},
+            {'name': 'Superman', 'first_name': 'Clark', 'last_name': 'Kent', 'username': 'superman', 'email': 'clark.kent@justiceleague.com', 'bio': 'Man of Steel from Krypton'},
+            {'name': 'Batman', 'first_name': 'Bruce', 'last_name': 'Wayne', 'username': 'batman', 'email': 'bruce.wayne@justiceleague.com', 'bio': 'Dark Knight of Gotham'},
+            {'name': 'Wonder Woman', 'first_name': 'Diana', 'last_name': 'Prince', 'username': 'wonderwoman', 'email': 'diana.prince@justiceleague.com', 'bio': 'Amazonian Warrior Princess'},
+            {'name': 'Flash', 'first_name': 'Barry', 'last_name': 'Allen', 'username': 'flash', 'email': 'barry.allen@justiceleague.com', 'bio': 'Fastest man alive'},
+            {'name': 'Aquaman', 'first_name': 'Arthur', 'last_name': 'Curry', 'username': 'aquaman', 'email': 'arthur.curry@justiceleague.com', 'bio': 'King of Atlantis'},
+            {'name': 'Green Lantern', 'first_name': 'Hal', 'last_name': 'Jordan', 'username': 'greenlantern', 'email': 'hal.jordan@justiceleague.com', 'bio': 'Guardian of Sector 2814'},
         ]
         
         marvel_users = []
         for hero in marvel_heroes:
             user = User.objects.create(
+                username=hero['username'],
+                first_name=hero['first_name'],
+                last_name=hero['last_name'],
                 name=hero['name'],
                 email=hero['email'],
+                bio=hero['bio'],
                 team='Team Marvel'
             )
             marvel_users.append(user)
@@ -64,8 +68,12 @@ class Command(BaseCommand):
         dc_users = []
         for hero in dc_heroes:
             user = User.objects.create(
+                username=hero['username'],
+                first_name=hero['first_name'],
+                last_name=hero['last_name'],
                 name=hero['name'],
                 email=hero['email'],
+                bio=hero['bio'],
                 team='Team DC'
             )
             dc_users.append(user)

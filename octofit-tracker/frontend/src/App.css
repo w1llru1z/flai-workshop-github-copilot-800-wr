@@ -396,3 +396,23 @@ input:focus, textarea:focus, select:focus {
     padding: 0.5rem;
   }
 }
+
+/* Clickable Card Styling */
+.clickable-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.clickable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  border-color: var(--primary-color);
+}
+
+.clickable-card .card-body {
+  padding: 2rem;
+}
+
+.clickable-card:active {
+  transform: translateY(-2px);
+}
